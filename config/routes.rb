@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :feats
+  resources :features
   resources :spells
   resources :skills
   resources :armors

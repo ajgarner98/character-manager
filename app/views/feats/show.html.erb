@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @feat %>
+
+<div>
+  <%= link_to "Edit this feat", edit_feat_path(@feat) %> |
+  <%= link_to "Back to feats", feats_path %>
+
+  <%= button_to "Destroy this feat", @feat, method: :delete %>
+</div>

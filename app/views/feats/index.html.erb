@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Feats</h1>
+
+<div id="feats">
+  <% @feats.each do |feat| %>
+    <%= render feat %>
+    <p>
+      <%= link_to "Show this feat", feat %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New feat", new_feat_path %>

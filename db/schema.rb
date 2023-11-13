@@ -10,7 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_13_155055) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_13_162053) do
+  create_table "characters", force: :cascade do |t|
+    t.integer "strength"
+    t.integer "dexterity"
+    t.integer "constitution"
+    t.integer "intelligence"
+    t.integer "wisdom"
+    t.integer "charisma"
+    t.integer "level"
+    t.string "character_class"
+    t.string "appearance"
+    t.string "background"
+    t.integer "user_id"
+    t.string "name"
+    t.integer "armor_class"
+    t.integer "max_health"
+    t.integer "current_health"
+    t.string "race"
+    t.integer "speed"
+    t.string "proficiency"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "installs", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :weapons
   resources :characters
   devise_for :users
   devise_for :installs

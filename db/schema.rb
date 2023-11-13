@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_13_165618) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_13_171308) do
+  create_table "armors", force: :cascade do |t|
+    t.integer "armor_class"
+    t.string "armor_category"
+    t.string "armor_type"
+    t.string "name"
+    t.integer "character_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "characters", force: :cascade do |t|
     t.integer "strength"
     t.integer "dexterity"
@@ -45,6 +55,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_13_165618) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_installs_on_email", unique: true
     t.index ["reset_password_token"], name: "index_installs_on_reset_password_token", unique: true
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string "name"
+    t.integer "modifier"
+    t.integer "character_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

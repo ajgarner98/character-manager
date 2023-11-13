@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :skills
+  resources :armors
   resources :weapons
   resources :characters
   devise_for :users

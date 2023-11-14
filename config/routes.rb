@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  # devise_for :users
   resources :feats
   resources :features
   resources :spells
@@ -6,10 +8,8 @@ Rails.application.routes.draw do
   resources :armors
   resources :weapons
   resources :characters
-  devise_for :users
-  devise_for :installs
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
+  root "characters#index"
 end

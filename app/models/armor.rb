@@ -12,4 +12,7 @@
 #  character_id   :integer
 #
 class Armor < ApplicationRecord
+  validates(:character_id, presence: true)
+
+  belongs_to(:character, class_name: "Character", foreign_key: "character_id")
 end

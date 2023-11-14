@@ -12,4 +12,5 @@
 #  character_id   :integer
 #
 class Armor < ApplicationRecord
+  belongs_to(:character, class_name: "Character", foreign_key: "character_id")
 end

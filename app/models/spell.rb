@@ -10,4 +10,5 @@
 #  character_id :integer
 #
 class Spell < ApplicationRecord
+  belongs_to(:character, class_name: "Character", foreign_key: "character_id")
 end

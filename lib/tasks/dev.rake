@@ -4,11 +4,13 @@ task sample_data: :environment do
   12.times do
 
     name = Faker::Name.first_name
-    User.create(
+    u = User.create(
       email: "#{name}@example.com",
-      user_name: name,
+      username: name,
+      password: "wordpass"
 
     )
-    p "There are #{User.count} user"
+    p u.username
   end
+  p "There are #{User.count} user"
 end

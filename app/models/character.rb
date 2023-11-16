@@ -28,7 +28,7 @@
 class Character < ApplicationRecord
   has_many(:armors, class_name: "Armor", foreign_key: "character_id")
   has_many(:feats, class_name: "Feat", foreign_key: "character_id")
-  has_many(:features, class_name: "Feat", foreign_key: "character_id")
+  has_many(:features, class_name: "Feature", foreign_key: "character_id")
   has_many(:skills, class_name: "Skill", foreign_key: "character_id")
   has_many(:spells, class_name: "Spell", foreign_key: "character_id")
   has_many(:weapons, class_name: "Weapon", foreign_key: "character_id")

@@ -49,7 +49,7 @@ task sample_data: :environment do
         intelligence: rand(9...17),
         wisdom: rand(9...17),
         charisma: rand(9...17),
-        appearance: ["ugly", "pretty", "tall", "short", "hairy", "super ugly", "ultra ugly", "cute", "handsome"].sample,
+        appearance: ["ugly", "pretty", "tall", "short", "hairy", "super ugly", "ultra ugly", "cute", "handsome", "ultimate ugly"].sample,
 
       )
       p c.appearance
@@ -71,9 +71,9 @@ task sample_data: :environment do
   end
 
   # armor sample data
-  users.each do
+  characters.each do |character|
     2.times do
-      a = Armor.create(
+      a = character.armors.create(
         name: ["robes", "iron armor", "steel armor", "leather armor"].sample,
         armor_class: [14, 15, 16].sample,
         armor_type: ["heavy", "light", "cloth"].sample,
@@ -82,9 +82,9 @@ task sample_data: :environment do
     end
   end
   # spell sample data
-  users.each do
+  characters.each do |character|
     2.times do
-      sp = Spell.create(
+      sp = character.spells.create(
         name: ["Acid Arrow", "Fireball", "Animal Friendship", "Vicious Mockery", "Aid", "Detect Thoughts", "Friends"].sample,
         level: [1, 2, 3].sample,
       )
@@ -92,9 +92,9 @@ task sample_data: :environment do
     end
   end
   #feat sample_data
-  users.each do
+  characters.each do |character|
     2.times do
-      character_feat = Feat.create(
+      character_feat = character.feats.create(
         name: ["Alert", "Chef", "Athlete"].sample,
         description: "A good feat",
       )
@@ -102,9 +102,9 @@ task sample_data: :environment do
     end
   end
 
-  users.each do
+  characters.each do |character|
     2.times do
-      character_feature = Feature.create(
+      character_feature = character.features.create(
         name: ["Second Wind", "Arcane Recovery", "Sneak Attack"].sample,
         description: "A good feature",
       )

@@ -49,7 +49,7 @@ task sample_data: :environment do
         intelligence: rand(9...17),
         wisdom: rand(9...17),
         charisma: rand(9...17),
-        appearance: ["ugly", "pretty", "tall", "short", "hairy", "super ugly", "ultra ugly", "cute", "handsome", "ultimate ugly"].sample,
+        appearance: ["ugly", "pretty", "tall", "short", "hairy", "super ugly", "ultra ugly", "cute", "handsome", "the ultimate ugly"].sample,
 
       )
       p c.appearance

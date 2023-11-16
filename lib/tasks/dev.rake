@@ -55,6 +55,8 @@ task sample_data: :environment do
       p c.appearance
     end
   end
+  characters = Character.all
+  
   # weapon sample data
   characters.each do |character|
     2.times do

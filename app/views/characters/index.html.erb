@@ -1,14 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Characters</h1>
+<div class="container mt-4">
+  <p class="notice text-success"><%= notice %></p>
 
-<div id="characters">
-  <% @characters.each do |character| %>
-    <%= render character %>
-    <p>
-      <%= link_to "Show this character", character %>
-    </p>
-  <% end %>
+  <h1 class="text-center mb-4">Characters</h1>
+
+  <div class="card-deck">
+    <% @characters.each do |character| %>
+      <%= render partial: 'character_card', locals: { character: character } %>
+    <% end %>
+  </div>
+
+  <%= link_to "New character", new_character_path, class: 'btn btn-success' %>
 </div>
-
-<%= link_to "New character", new_character_path %>

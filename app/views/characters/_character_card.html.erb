@@ -1,8 +1,14 @@
-<div class = "card mb-4">
-  <div class = "card-body">
-    <h5 class = "card-title"> <%=character.name%> </h5>
-    <p class="card-text">
-      <strong>Level:</strong> <%= character.level %>
-    </p>
+  <div class = "card mb-4", style = "width: 18rem;">
+    <div class = "card-body">
+      <%= link_to character_path(character) do %>
+        <%= image_tag character.image, class: 'card-img-top', alt: 'Character Image', style: 'width: 100%; height: auto;' %>
+      <% end %>
+      <h5 class = "card-title"> <%=character.name%> </h5>
+      <p class = "card-text">
+        <strong>Class:</strong> <%= character.character_class%> 
+      </p>
+      <p class="card-text">
+        <strong>Level:</strong> <%= character.level %>
+      </p>
+    </div>
   </div>
-</div>

@@ -1,48 +1,79 @@
 <div id="<%= dom_id character %>">
-  <p>
-    <strong>Name:</strong>
-    <%= character.name %>
-  </p>
 
-  <p>
-    <strong>Character class:</strong>
-    <%= character.character_class %>
-  </p>
+  <div class= "row">
+    <div class = "col-md-5"
+    <p>
+      <%= link_to(edit_character_path) do %>
+        <%= image_tag character.image, class: 'img-fluid', alt: 'Character Image', width: '400', height: '300' %>
+      <% end %>
+    </p>
 
-  <p>
-    <strong>Level:</strong>
-    <%= character.level %>
-  </p>
+    <p>
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow= <%= character.current_health %> aria-valuemin="0" aria-valuemax=<%= character.max_health %>><%= character.current_health %></div>
+      </div>
+    </p>
 
-  <p>
-    <strong>Strength:</strong>
-    <%= character.strength %>
-  </p>
+    <p>
+      <strong>Max health:</strong>
+      <%= character.max_health %>
+    </p>
 
-  <p>
-    <strong>Dexterity:</strong>
-    <%= character.dexterity %>
-  </p>
+    <p>
+      <strong>Current health:</strong>
+      <%= character.current_health %>
+    </p>
+    <p>
+      <strong>Name:</strong>
+      <%= character.name %>
+    </p>
 
-  <p>
-    <strong>Constitution:</strong>
-    <%= character.constitution %>
-  </p>
+    <p>
+      <strong>Character class:</strong>
+      <%= character.character_class %>
+    </p>
 
-  <p>
-    <strong>Intelligence:</strong>
-    <%= character.intelligence %>
-  </p>
+    <p>
+      <strong>Level:</strong>
+      <%= character.level %>
+    </p>
 
-  <p>
-    <strong>Wisdom:</strong>
-    <%= character.wisdom %>
-  </p>
+  </div>
 
-  <p>
-    <strong>Charisma:</strong>
-    <%= character.charisma %>
-  </p>
+  <div class = "col-md-4">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <strong>Strength:</strong>
+        <%= character.strength %>
+      </li>
+
+      <li class="list-group-item">
+        <strong>Dexterity:</strong>
+        <%= character.dexterity %>
+      </li>
+
+      <li class="list-group-item">
+        <strong>Constitution:</strong>
+        <%= character.constitution %>
+      </li>
+
+      <li class="list-group-item">
+        <strong>Intelligence:</strong>
+        <%= character.intelligence %>
+      </li>
+
+      <li class="list-group-item">
+        <strong>Wisdom:</strong>
+        <%= character.wisdom %>
+      </li>
+
+      <li class="list-group-item">
+        <strong>Charisma:</strong>
+        <%= character.charisma %>
+      </li>
+
+    </ul>
+  </div>
 
   <p>
     <strong>Appearance:</strong>
@@ -87,11 +118,6 @@
   <p>
     <strong>Proficiency:</strong>
     <%= character.proficiency %>
-  </p>
-
-  <p>
-    <strong>Image:</strong>
-    <%= character.image %>
   </p>
 
 </div>

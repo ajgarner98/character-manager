@@ -3,29 +3,19 @@
   <div class= "row">
     <div class = "col-md-5"
     <p>
+      <h1><%= character.name %></h1>
+    </p>
+    <p>
       <%= link_to(edit_character_path) do %>
         <%= image_tag character.image, class: 'img-fluid', alt: 'Character Image', width: '400', height: '300' %>
       <% end %>
     </p>
 
     <p>
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow= <%= character.current_health %> aria-valuemin="0" aria-valuemax=<%= character.max_health %>><%= character.current_health %></div>
+      <div class="progress", style = "height: 25px">
+        <% current_health_percentage = (character.current_health.to_f / character.max_health) * 100 %>
+        <div class="progress-bar" role="progressbar" style="width: <%= current_health_percentage %>%" aria-valuenow= <%= character.current_health %> aria-valuemin="0" aria-valuemax=<%= character.max_health %>><%= character.current_health %></div>
       </div>
-    </p>
-
-    <p>
-      <strong>Max health:</strong>
-      <%= character.max_health %>
-    </p>
-
-    <p>
-      <strong>Current health:</strong>
-      <%= character.current_health %>
-    </p>
-    <p>
-      <strong>Name:</strong>
-      <%= character.name %>
     </p>
 
     <p>
@@ -73,9 +63,7 @@
       </li>
 
     </ul>
-  </div>
-
-  <p>
+    <p>
     <strong>Appearance:</strong>
     <%= character.appearance %>
   </p>
@@ -86,23 +74,8 @@
   </p>
 
   <p>
-    <strong>User:</strong>
-    <%= character.user_id %>
-  </p>
-
-  <p>
     <strong>Armor class:</strong>
     <%= character.armor_class %>
-  </p>
-
-  <p>
-    <strong>Max health:</strong>
-    <%= character.max_health %>
-  </p>
-
-  <p>
-    <strong>Current health:</strong>
-    <%= character.current_health %>
   </p>
 
   <p>
@@ -119,5 +92,8 @@
     <strong>Proficiency:</strong>
     <%= character.proficiency %>
   </p>
+  </div>
+
+  
 
 </div>

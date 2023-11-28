@@ -5,9 +5,16 @@ Rails.application.routes.draw do
   resources :features
   resources :spells
   resources :skills
-  resources :armors
   resources :weapons
-  resources :characters
+  resources :armors
+  resources :characters do
+    resources :armors
+    resources :feats
+    resources :features
+    resources :spells
+    resources :skills
+    resources :weapons
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

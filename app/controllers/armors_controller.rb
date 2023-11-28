@@ -1,9 +1,10 @@
 class ArmorsController < ApplicationController
   before_action :set_armor, only: %i[ show edit update destroy ]
+  before_action :set_character
 
   # GET /armors or /armors.json
   def index
-    @armors = Armor.all
+    @armors = @character.armors
   end
 
   # GET /armors/1 or /armors/1.json
@@ -62,6 +63,11 @@ class ArmorsController < ApplicationController
     def set_armor
       @armor = Armor.find(params[:id])
     end
+
+    def set_character
+      @character =  Character.find(params[:character_id])
+    end
+
 
     # Only allow a list of trusted parameters through.
     def armor_params

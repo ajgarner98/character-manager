@@ -6,9 +6,9 @@
   <% @armors.each do |armor| %>
     <%= render armor %>
     <p>
-      <%= link_to "Show this armor", armor %>
+      <%= link_to "Show this armor", character_armor_path(@character, armor) %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New armor", new_armor_path %>
+<%= link_to "New armor", new_character_armor_path(@character) %>

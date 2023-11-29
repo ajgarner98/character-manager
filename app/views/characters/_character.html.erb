@@ -96,8 +96,8 @@
   </div>
 
   <%= link_to "View Armors", character_armors_path(@character), class: "btn btn-primary" %>
-  <%= link_to "View Weapons", weapons_path, class: "btn btn-primary" %>
-  <%= link_to "View Spells", spells_path, class: "btn btn-primary" %>
+  <%= link_to "View Weapons", character_weapons_path(@character), class: "btn btn-primary" %>
+  <%= link_to "View Spells", character_spells_path(@character), class: "btn btn-primary" %>
   <%= link_to "View Feats", feats_path, class: "btn btn-primary" %>
   <%= link_to "View Features", features_path, class: "btn btn-primary" %>
 

@@ -8,12 +8,13 @@ Rails.application.routes.draw do
   resources :weapons
   resources :armors
   resources :characters do
+    resources :weapons
     resources :armors
     resources :feats
     resources :features
     resources :spells
     resources :skills
-    resources :weapons
+    
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

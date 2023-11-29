@@ -6,9 +6,9 @@
   <% @weapons.each do |weapon| %>
     <%= render weapon %>
     <p>
-      <%= link_to "Show this weapon", weapon %>
+      <%= link_to "Show this weapon", character_weapon_path(@character, weapon) %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New weapon", new_weapon_path %>
+<%= link_to "New weapon", new_character_weapon_path(@character) %>

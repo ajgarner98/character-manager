@@ -1,9 +1,10 @@
 class FeaturesController < ApplicationController
   before_action :set_feature, only: %i[ show edit update destroy ]
+  before_action :set_character
 
   # GET /features or /features.json
   def index
-    @features = Feature.all
+    @features = @character.features
   end
 
   # GET /features/1 or /features/1.json
@@ -61,6 +62,11 @@ class FeaturesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_feature
       @feature = Feature.find(params[:id])
+    end
+
+    def set_character
+      @character = Character.find(params[:character_id])
+      
     end
 
     # Only allow a list of trusted parameters through.

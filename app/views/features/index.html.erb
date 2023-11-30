@@ -6,9 +6,9 @@
   <% @features.each do |feature| %>
     <%= render feature %>
     <p>
-      <%= link_to "Show this feature", feature %>
+      <%= link_to "Show this feature", character_feature_path(@character, feature) %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New feature", new_feature_path %>
+<%= link_to "New feature", new_character_feature_path(@character) %>

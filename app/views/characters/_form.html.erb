@@ -62,7 +62,7 @@
   </div>
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
+    <%= form.label :user_id, style: "display: block", value: current_user.id %>
     <%= form.number_field :user_id %>
   </div>
 
@@ -102,7 +102,7 @@
   </div>
 
   <div>
-    <%= form.label :image, style: "display: block" %>
+    <%= form.label :image, style: "display: block", value:"https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" %>
     <%= form.text_field :image %>
   </div>
 

@@ -29,71 +29,75 @@
     </p>
 
   </div>
+  
 
-  <div class = "col-md-4">
-    <ul class="list-group">
+  <div class = "col-md-6">
+    <%= render partial: 'stat_card', locals: { character: character } %>
+    <!--<ul class="list-group">
       <li class="list-group-item">
         <strong>Strength:</strong>
-        <%= character.strength %>
-      </li>
+        <%#= character.strength %>-->
+<!--      </li>
 
       <li class="list-group-item">
         <strong>Dexterity:</strong>
-        <%= character.dexterity %>
-      </li>
+        <%#= character.dexterity %>-->
+<!--      </li>
 
       <li class="list-group-item">
         <strong>Constitution:</strong>
-        <%= character.constitution %>
-      </li>
+        <%#= character.constitution %>-->
+<!--      </li>
 
       <li class="list-group-item">
         <strong>Intelligence:</strong>
-        <%= character.intelligence %>
-      </li>
+        <%#= character.intelligence %>-->
+<!--      </li>
 
       <li class="list-group-item">
         <strong>Wisdom:</strong>
-        <%= character.wisdom %>
-      </li>
+        <%#= character.wisdom %>-->
+<!--      </li>
 
       <li class="list-group-item">
         <strong>Charisma:</strong>
-        <%= character.charisma %>
-      </li>
+        <%#= character.charisma %>-->
+<!--      </li>
 
-    </ul>
+    </ul>-->
     <p>
-    <strong>Appearance:</strong>
-    <%= character.appearance %>
-  </p>
+      <strong>Appearance:</strong>
+      <%= character.appearance %>
+    </p>
 
-  <p>
-    <strong>Background:</strong>
-    <%= character.background %>
-  </p>
+    <p>
+      <strong>Background:</strong>
+      <%= character.background %>
+    </p>
 
-  <p>
-    <strong>Armor class:</strong>
-    <%= character.armor_class %>
-  </p>
+    <p>
+      <strong>Armor class:</strong>
+      <%= character.armor_class %>
+    </p>
 
-  <p>
-    <strong>Race:</strong>
-    <%= character.race %>
-  </p>
+    <p>
+      <strong>Race:</strong>
+      <%= character.race %>
+    </p>
 
-  <p>
-    <strong>Speed:</strong>
-    <%= character.speed %>
-  </p>
+    <p>
+      <strong>Speed:</strong>
+      <%= character.speed %>
+    </p>
 
-  <p>
-    <strong>Proficiency:</strong>
-    <%= character.proficiency %>
-  </p>
+    <p>
+      <strong>Proficiency:</strong>
+      <%= character.proficiency %>
+    </p>
 
   </div>
+
+  
 
   <%= link_to "View Armors", character_armors_path(@character), class: "btn btn-primary" %>
   <%= link_to "View Weapons", character_weapons_path(@character), class: "btn btn-primary" %>

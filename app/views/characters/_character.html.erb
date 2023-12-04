@@ -31,7 +31,7 @@
   </div>
   
 
-  <div class = "col-md-6">
+  <div class = "col-md-5">
     <%= render partial: 'stat_card', locals: { character: character } %>
     <!--<ul class="list-group">
       <li class="list-group-item">
@@ -99,10 +99,12 @@
 
   
 
-  <%= link_to "View Armors", character_armors_path(@character), class: "btn btn-primary" %>
+  
+
+</div>
+
+<%= link_to "View Armors", character_armors_path(@character), class: "btn btn-primary" %>
   <%= link_to "View Weapons", character_weapons_path(@character), class: "btn btn-primary" %>
   <%= link_to "View Spells", character_spells_path(@character), class: "btn btn-primary" %>
   <%= link_to "View Feats", character_feats_path(@character), class: "btn btn-primary" %>
   <%= link_to "View Features", character_features_path(@character), class: "btn btn-primary" %>
-
-</div>

@@ -8,6 +8,7 @@ class CharactersController < ApplicationController
 
   # GET /characters/1 or /characters/1.json
   def show
+    @armors = Armor.all
   end
 
   # GET /characters/new

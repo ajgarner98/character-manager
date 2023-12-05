@@ -29,7 +29,6 @@
     </p>
 
   </div>
-  
 
   <div class = "col-md-5">
     <%= render partial: 'stat_card', locals: { character: character } %>
@@ -37,32 +36,32 @@
       <li class="list-group-item">
         <strong>Strength:</strong>
         <%#= character.strength %>-->
-<!--      </li>
+    <!--      </li>
 
       <li class="list-group-item">
         <strong>Dexterity:</strong>
         <%#= character.dexterity %>-->
-<!--      </li>
+    <!--      </li>
 
       <li class="list-group-item">
         <strong>Constitution:</strong>
         <%#= character.constitution %>-->
-<!--      </li>
+    <!--      </li>
 
       <li class="list-group-item">
         <strong>Intelligence:</strong>
         <%#= character.intelligence %>-->
-<!--      </li>
+    <!--      </li>
 
       <li class="list-group-item">
         <strong>Wisdom:</strong>
         <%#= character.wisdom %>-->
-<!--      </li>
+    <!--      </li>
 
       <li class="list-group-item">
         <strong>Charisma:</strong>
         <%#= character.charisma %>-->
-<!--      </li>
+    <!--      </li>
 
     </ul>-->
     <p>
@@ -97,14 +96,20 @@
 
   </div>
 
-  
-
-  
-
 </div>
 
-<%= link_to "View Armors", character_armors_path(@character), class: "btn btn-primary" %>
-  <%= link_to "View Weapons", character_weapons_path(@character), class: "btn btn-primary" %>
-  <%= link_to "View Spells", character_spells_path(@character), class: "btn btn-primary" %>
-  <%= link_to "View Feats", character_feats_path(@character), class: "btn btn-primary" %>
-  <%= link_to "View Features", character_features_path(@character), class: "btn btn-primary" %>
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#armorModal">
+  View Armor
+</button>-->
+
+<%= render "character_modal"%>
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#armorModal">
+  Armor
+</button>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#weaponModal">
+  Weapon
+</button>
+<%= link_to "View Spells", character_spells_path(@character), class: "btn btn-primary" %>
+<%= link_to "View Feats", character_feats_path(@character), class: "btn btn-primary" %>
+<%= link_to "View Features", character_features_path(@character), class: "btn btn-primary" %>

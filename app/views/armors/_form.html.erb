@@ -1,3 +1,4 @@
+
 <%= form_with(model: armor) do |form| %>
   <% if armor.errors.any? %>
     <div style="color: red">
@@ -32,7 +33,7 @@
   </div>
 
   <div>
-    <%= form.label :character_id, style: "display: block" %>
+    <%= form.label :character_id, style: "display: block", value: character.id %>
     <%= form.number_field :character_id %>
   </div>
 

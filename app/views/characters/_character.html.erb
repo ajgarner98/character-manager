@@ -113,20 +113,22 @@
         </button>
       </div>
       <div class="modal-body">
-        <!-- Add content related to the armor details here -->
-        <%= render 'armors/show', armor: @armor %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        <% @character_armors.each do |armor| %>
+          <%= render 'armors/armor', armor: armor %>
+        <%end%>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#armorModal">
-  Armor
-</button>
-<%= link_to "View Weapons", character_weapons_path(@character), class: "btn btn-primary" %>
-<%= link_to "View Spells", character_spells_path(@character), class: "btn btn-primary" %>
-<%= link_to "View Feats", character_feats_path(@character), class: "btn btn-primary" %>
-<%= link_to "View Features", character_features_path(@character), class: "btn btn-primary" %>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#armorModal">
+    Armor
+  </button>
+  <%= link_to "View Weapons", character_weapons_path(@character), class: "btn btn-primary" %>
+  <%= link_to "View Spells", character_spells_path(@character), class: "btn btn-primary" %>
+  <%= link_to "View Feats", character_feats_path(@character), class: "btn btn-primary" %>
+  <%= link_to "View Features", character_features_path(@character), class: "btn btn-primary" %>

@@ -1,5 +1,6 @@
 class CharactersController < ApplicationController
   before_action :set_character, only: %i[ show edit update destroy ]
+  before_action :ensure_user_is_authorized, only: [:show]
 
   # GET /characters or /characters.json
   def index
@@ -8,7 +9,7 @@ class CharactersController < ApplicationController
 
   # GET /characters/1 or /characters/1.json
   def show
-    @armors = Armor.all
+    @armors = @character.armors.first
   end
 
   # GET /characters/new
@@ -68,4 +69,9 @@ class CharactersController < ApplicationController
     def character_params
       params.require(:character).permit(:strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma, :level, :character_class, :appearance, :background, :user_id, :name, :armor_class, :max_health, :current_health, :race, :speed, :proficiency, :image)
     end
+
+  def ensure_user_is_authorized
+    
+  end
+
 end

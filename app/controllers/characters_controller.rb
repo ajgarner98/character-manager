@@ -71,7 +71,10 @@ class CharactersController < ApplicationController
     end
 
   def ensure_user_is_authorized
-    
+    if !CharacterPolicy.new(current_user, @character).show?
+      redirect_back fall_back_location: root_url
+      raise Pundit::NotAuthorizedError, "not allowed"
+    end
   end
 
 end

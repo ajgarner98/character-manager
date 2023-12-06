@@ -1,6 +1,6 @@
-class CharacterPolicy
+class CharacterPolicy < ApplicationPolicy 
 
-  attr_reader :user :character
+  attr_reader :user, :character
 
   def initialize(user, character)
 
@@ -10,7 +10,7 @@ class CharacterPolicy
   end
 
   def show?
-    user == current_user
+    user == character.user
   end
 
 end

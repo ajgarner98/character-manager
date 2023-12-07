@@ -12,6 +12,10 @@ class CharactersController < ApplicationController
     @character = Character.find(params[:id])
     @character_armors = @character.armors
     @armors = @character.armors.first
+
+    @character = Character.find(params[:id])
+    @character_weapons = @character.weapons
+    @weapons = @character.weapons.first
   end
 
   # GET /characters/new

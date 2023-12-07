@@ -102,33 +102,15 @@
   View Armor
 </button>-->
 
-<div class="modal fade" id="armorModal" tabindex="-1" role="dialog" aria-labelledby="armorModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <!-- Modal content goes here -->
-      <div class="modal-header">
-        <h5 class="modal-title" id="armorModalLabel">Armor Details</h5>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-
-        <% @character_armors.each do |armor| %>
-          <%= render 'armors/armor', armor: armor %>
-        <%end%>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<%=render  "characters/partials/armor_modal" %>
+<%=render  "characters/partials/weapon_modal" %>
 
   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#armorModal">
     Armor
   </button>
-  <%= link_to "View Weapons", character_weapons_path(@character), class: "btn btn-primary" %>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#weaponModal">
+    Weapon
+  </button>
   <%= link_to "View Spells", character_spells_path(@character), class: "btn btn-primary" %>
   <%= link_to "View Feats", character_feats_path(@character), class: "btn btn-primary" %>
   <%= link_to "View Features", character_features_path(@character), class: "btn btn-primary" %>

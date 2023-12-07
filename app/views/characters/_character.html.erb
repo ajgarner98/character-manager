@@ -104,13 +104,17 @@
 
 <%=render  "characters/partials/armor_modal" %>
 <%=render  "characters/partials/weapon_modal" %>
+<%=render  "characters/partials/spell_modal" %>
 
   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#armorModal">
-    Armor
+    Armors
   </button>
   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#weaponModal">
-    Weapon
+    Weapons
   </button>
-  <%= link_to "View Spells", character_spells_path(@character), class: "btn btn-primary" %>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#spellModal">
+    Spells
+  </button>
+  
   <%= link_to "View Feats", character_feats_path(@character), class: "btn btn-primary" %>
   <%= link_to "View Features", character_features_path(@character), class: "btn btn-primary" %>

@@ -1,5 +1,4 @@
 
-<%= link_to "Increase Level", increase_level_character_path(character), method: :post, remote: true, class: "btn btn-primary" %>
 
 <div id="<%= dom_id character %>">
 
@@ -27,46 +26,18 @@
     </p>
 
     <p>
-      <strong>Level:</strong>
-      <%= character.level %>
+      <strong>Level:
+      <%= character.level %> </strong>
+      
+      <%= link_to "<i class='fas fa-level-up-alt'  fa-bounce> </i>".html_safe, increase_level_character_path(character), method: :post, remote: true, class: "text-primary" %>
+
     </p>
 
   </div>
 
   <div class = "col-md-5">
     <%= render partial: 'stat_card', locals: { character: character } %>
-    <!--<ul class="list-group">
-      <li class="list-group-item">
-        <strong>Strength:</strong>
-        <%#= character.strength %>-->
-    <!--      </li>
 
-      <li class="list-group-item">
-        <strong>Dexterity:</strong>
-        <%#= character.dexterity %>-->
-    <!--      </li>
-
-      <li class="list-group-item">
-        <strong>Constitution:</strong>
-        <%#= character.constitution %>-->
-    <!--      </li>
-
-      <li class="list-group-item">
-        <strong>Intelligence:</strong>
-        <%#= character.intelligence %>-->
-    <!--      </li>
-
-      <li class="list-group-item">
-        <strong>Wisdom:</strong>
-        <%#= character.wisdom %>-->
-    <!--      </li>
-
-      <li class="list-group-item">
-        <strong>Charisma:</strong>
-        <%#= character.charisma %>-->
-    <!--      </li>
-
-    </ul>-->
     <p>
       <strong>Appearance:</strong>
       <%= character.appearance %>

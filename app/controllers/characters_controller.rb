@@ -77,16 +77,24 @@ class CharactersController < ApplicationController
     end
   end
 
+  def increase_level
+    @character = Character.find(params[:id])
+    @character.increment!(:level)
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_character
-      @character = Character.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def character_params
-      params.require(:character).permit(:strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma, :level, :character_class, :appearance, :background, :user_id, :name, :armor_class, :max_health, :current_health, :race, :speed, :proficiency, :image)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_character
+    @character = Character.find(params[:id])
+  end
 
-
+  # Only allow a list of trusted parameters through.
+  def character_params
+    params.require(:character).permit(:strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma, :level, :character_class, :appearance, :background, :user_id, :name, :armor_class, :max_health, :current_health, :race, :speed, :proficiency, :image)
+  end
 end

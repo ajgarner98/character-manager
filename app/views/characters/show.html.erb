@@ -1,11 +1,39 @@
 <p style="color: green"><%= notice %></p>
-  <%= render @character %>
+<%= render @character %>
 
-  <div>
-    <%= link_to "Edit this character", edit_character_path(@character) %> |
-    <%= link_to "Back to characters", characters_path %>
+<!--<h1><%#= @character.name %></h1>
+<p>Level: <span id="characterLevel"><%#= @character.level %></span></p>
 
-    <%= button_to "Destroy this character", @character, method: :delete %>
-  </div>
+<button id="increaseLevelBtn">Increase Level</button>
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var increaseLevelBtn = document.getElementById('increaseLevelBtn');
+
+    increaseLevelBtn.addEventListener('click', function() {
+      
+      $.ajax({
+        type: 'PATCH',
+        url: '<%#= character_path(@character) %>',
+        data: { character: { level: <%#= @character.level + 1 %> } },
+        dataType: 'script',
+        success: function() {
+          
+          $('#characterLevel').text(<%#= @character.reload.level %>);
+        }
+      });
+    });
+  });
+</script>-->
+
+<div>
+  <%= link_to "Edit this character", edit_character_path(@character) %> |
+  <%= link_to "Back to characters", characters_path %>
+
+  <%= button_to "Destroy this character", @character, method: :delete %>
+</div>
 end
-

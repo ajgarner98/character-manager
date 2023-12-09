@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
     member do
       post 'increase_level'
+      post 'increase_health'
+      post 'decrease_health' 
     end
     
   end

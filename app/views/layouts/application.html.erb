@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
     <!-- Connect Bootstrap JavaScript and its dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-    
 
     <title>Rails Template</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -16,7 +15,6 @@
     <%= javascript_importmap_tags %>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" %>
-    
 
     <style>
       body {
@@ -25,7 +23,9 @@
         Font-family: "Montserrat";
         font-smooth: always;
       }
-
+      .health-bar{
+        color: red;
+      }
       .collapse-content {
         background-color: red;
         color: white;
@@ -36,7 +36,7 @@
         color: white;
       }
 
-      .btn-secondary{
+      .btn-secondary {
         margin-bottom: 20px;
         background-color: red;
         color: white;
@@ -48,7 +48,7 @@
 
       }
 
-      .btn-primary{
+      .btn-primary {
         background-color: red;
         color: white;
         width: 100px;
@@ -56,7 +56,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        
+
       }
 
       .navbar-toggler-icon span {
@@ -78,11 +78,37 @@
       #details {
         background-color: red;
         color: white;
-        
-        
+
+
+      }
+      @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-30px);
+        }
+        60% {
+          transform: translateY(-15px);
+        }
+      }
+
+      .bounce {
+        animation: bounce 1s;
       }
     </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var levelUpIcon = document.getElementById('levelUpIcon');
 
+        levelUpIcon.addEventListener('click', function () {
+          levelUpIcon.classList.add('bounce');
+          setTimeout(function () {
+            levelUpIcon.classList.remove('bounce');
+          }, 1000); // Adjust the duration of the bounce animation
+        });
+      });
+    </script>
   </head>
 
   <body>

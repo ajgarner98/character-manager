@@ -86,6 +86,26 @@ class CharactersController < ApplicationController
     end
   end
 
+  def increase_health
+    def increase_health
+      @character = Character.find(params[:id])
+      @character.increment!(:current_health)
+
+      respond_to do |format|
+        format.js
+      end
+    end
+  end
+
+  def decrease_health
+    @character = Character.find(params[:id])
+    @character.decrement!(:current_health)
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.

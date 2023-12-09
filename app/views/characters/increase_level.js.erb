@@ -1,11 +1,5 @@
-
-console.log("Updating character level dynamically...");
-
-
 var levelContainer = $("#<%= dom_id @character %> .col-md-5 strong:contains('Level:')");
 
-// Get the new level
 var newLevel = <%= @character.level %>;
 
-// Set the new content
 levelContainer.html("Level: " + newLevel);

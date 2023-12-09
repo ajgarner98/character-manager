@@ -1,5 +1,3 @@
-
-
 <div id="<%= dom_id character %>">
 
   <div class= "row">
@@ -14,10 +12,17 @@
     </p>
 
     <p>
-      <div class="progress", style = "height: 25px">
+      <div class="progress", style = "height: 25px" >
         <% current_health_percentage = (character.current_health.to_f / character.max_health) * 100 %>
-        <div class="progress-bar" role="progressbar" style="width: <%= current_health_percentage %>%" aria-valuenow= <%= character.current_health %> aria-valuemin="0" aria-valuemax=<%= character.max_health %>><%= character.current_health %></div>
+        <div class="progress-bar bg-danger" role="progressbar" style="width: <%= current_health_percentage %>%"  aria-valuenow= <%= character.current_health %> aria-valuemin="0" aria-valuemax=<%= character.max_health %>><span id="currentHealthBar"><%= character.current_health %></span></div>
       </div>
+    </p>
+
+    <p>
+      <strong>Current Health:</strong>
+      <span id="currentHealthDisplay"><%= character.current_health %></span>
+      <%= link_to "<i class='fas fa-plus'></i>".html_safe, increase_health_character_path(character), method: :post, remote: true, class: "btn btn-success", id: "increaseHealthBtn" %>
+      <%= link_to "<i class='fas fa-minus'></i>".html_safe, decrease_health_character_path(character), method: :post, remote: true, class: "btn btn-danger", id: "decreaseHealthBtn" %>
     </p>
 
     <p>
@@ -27,9 +32,9 @@
 
     <p>
       <strong>Level:
-      <%= character.level %> </strong>
-      
-      <%= link_to "<i class='fas fa-level-up-alt'  fa-bounce> </i>".html_safe, increase_level_character_path(character), method: :post, remote: true, class: "text-primary" %>
+        <%= character.level %> </strong>
+
+      <%= link_to "<i id='levelUpIcon' class='fas fa-level-up-alt'></i>".html_safe, increase_level_character_path(character), method: :post, remote: true, class: "text-primary" %>
 
     </p>
 

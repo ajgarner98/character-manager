@@ -28,6 +28,10 @@ class CharactersController < ApplicationController
     @character = Character.find(params[:id])
     @character_features = @character.features
     @features = @character.features.first
+
+    @character = Character.find(params[:id])
+    @character_skills = @character.skills
+    @features = @character.features.first
   end
 
   # GET /characters/new

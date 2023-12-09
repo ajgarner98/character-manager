@@ -86,7 +86,7 @@
 <%=render  "characters/partials/spell_modal" %>
 <%=render  "characters/partials/feat_modal" %>
 <%=render  "characters/partials/feature_modal" %>
-
+<%=render  "characters/partials/skill_modal" %>
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#armorModal">
   Armors
 </button>
@@ -102,5 +102,3 @@
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#featureModal">
   Features
 </button>
-
-<%= link_to "View Features", character_features_path(@character), class: "btn btn-primary" %>

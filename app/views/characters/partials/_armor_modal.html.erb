@@ -9,14 +9,42 @@
         </button>
       </div>
       <div class="modal-body">
-
+        <!-- Display existing armors -->
         <% @character_armors.each do |armor| %>
           <%= render 'armors/armor', armor: armor %>
-        <%end%>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
+        <% end %>
+
+        <%= form_with(model: [@character, Armor.new]) do |form| %>
+          <!-- form fields -->
+          <div>
+            <%= form.label :armor_class, style: "display: block" %>
+            <%= form.number_field :armor_class %>
+          </div>
+
+          <div>
+            <%= form.label :armor_category, style: "display: block" %>
+            <%= form.text_field :armor_category %>
+          </div>
+
+          <div>
+            <%= form.label :armor_type, style: "display: block" %>
+            <%= form.text_field :armor_type %>
+          </div>
+
+          <div>
+            <%= form.label :name, style: "display: block" %>
+            <%= form.text_field :name %>
+          </div>
+
+          <div>
+            <%= form.submit %>
+          </div>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <%= link_to 'New Armor', new_character_armor_path(@character), class: 'btn btn-secondary' %>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
+</div>

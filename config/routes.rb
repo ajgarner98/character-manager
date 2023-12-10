@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   resources :spells
   resources :skills
   resources :weapons
-  resources :armors
+  resources :armors do
+    member do
+      get 'edit' 
+    end
+  end
   resources :characters do
     resources :weapons
     resources :armors

@@ -8,14 +8,34 @@
         </button>
       </div>
       <div class="modal-body">
-
         <% @character_features.each do |feature| %>
           <%= render 'features/feature', feature: feature %>
-        <%end%>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
+        <% end %>
+        <%= form_with(model: [@character, Feature.new]) do |form| %>
+          <div>
+            <%= form.label :name, style: "display: block" %>
+            <%= form.text_field :name %>
+          </div>
+
+          <div>
+            <%= form.label :description, style: "display: block" %>
+            <%= form.text_field :description %>
+          </div>
+
+          <div>
+            <%= form.label :character_id, style: "display: block" %>
+            <%= form.hidden_field :character_id, value: @character.id %>
+          </div>
+
+          <div>
+            <%= form.submit %>
+          </div>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <%= link_to 'New Feature', new_character_feature_path(@character), class: 'btn btn-secondary' %>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
+</div>

@@ -1,7 +1,6 @@
 <div class="modal fade" id="featModal" tabindex="-1" role="dialog" aria-labelledby="featModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      
       <div class="modal-header">
         <h5 class="modal-title" id="featModalLabel">Feat Details</h5>
         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
@@ -9,16 +8,34 @@
         </button>
       </div>
       <div class="modal-body">
-
         <% @character_feats.each do |feat| %>
           <%= render 'feats/feat', feat: feat %>
-        <%end%>
-        </div>
+        <% end %>
+        <%= form_with(model: [@character, Feat.new]) do |form| %>
+          <div>
+            <%= form.label :name, style: "display: block" %>
+            <%= form.text_field :name %>
+          </div>
 
-        
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
+          <div>
+            <%= form.label :description, style: "display: block" %>
+            <%= form.text_field :description %>
+          </div>
+
+          <div>
+            <%= form.label :character_id, style: "display: block" %>
+            <%= form.hidden_field :character_id, value: @character.id %>
+          </div>
+
+          <div>
+            <%= form.submit %>
+          </div>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <%= link_to 'New Feat', new_character_feat_path(@character), class: 'btn btn-secondary' %>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
+</div>

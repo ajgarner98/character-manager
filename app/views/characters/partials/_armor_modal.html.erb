@@ -9,13 +9,12 @@
         </button>
       </div>
       <div class="modal-body">
-        <!-- Display existing armors -->
         <% @character_armors.each do |armor| %>
           <%= render 'armors/armor', armor: armor %>
+          
         <% end %>
-
         <%= form_with(model: [@character, Armor.new]) do |form| %>
-          <!-- form fields -->
+
           <div>
             <%= form.label :armor_class, style: "display: block" %>
             <%= form.number_field :armor_class %>

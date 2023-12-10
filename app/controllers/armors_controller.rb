@@ -23,6 +23,7 @@ class ArmorsController < ApplicationController
 
   # GET /armors/1/edit
   def edit
+    @armor
   end
 
   # POST /armors or /armors.json

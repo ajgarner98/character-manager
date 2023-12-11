@@ -28,7 +28,7 @@
 
   <div>
     <%= form.label :character_id, style: "display: block" %>
-    <%= form.number_field :character_id %>
+    <%= form.hidden_field :character_id, value: @character.id %>
   </div>
 
   <div>

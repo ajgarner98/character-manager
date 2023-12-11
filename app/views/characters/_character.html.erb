@@ -1,109 +1,113 @@
 <div id="<%= dom_id character %>">
+  <div class="row">
+    <div class="col-md-6">
+      <p>
+        <h1><%= character.name %></h1>
+      </p>
+      <p>
+        <%= link_to(edit_character_path) do %>
+          <%= image_tag character.image, class: 'img-fluid', alt: 'Character Image', width: '400', height: '300' %>
+        <% end %>
+      </p>
 
-  <div class= "row">
-    <div class = "col-md-5"
-    <p>
-      <h1><%= character.name %></h1>
-    </p>
-    <p>
-      <%= link_to(edit_character_path) do %>
-        <%= image_tag character.image, class: 'img-fluid', alt: 'Character Image', width: '400', height: '300' %>
-      <% end %>
-    </p>
+      <p>
+        <div class="progress" style="height: 25px">
+          <% current_health_percentage = (character.current_health.to_f / character.max_health) * 100 %>
+          <div class="progress-bar bg-danger" role="progressbar" style="width: <%= current_health_percentage %>%" aria-valuenow=<%= character.current_health %> aria-valuemin="0" aria-valuemax=<%= character.max_health %>><span id="currentHealthBar"><%= character.current_health %></span></div>
+        </div>
+      </p>
 
-    <p>
-      <div class="progress", style = "height: 25px" >
-        <% current_health_percentage = (character.current_health.to_f / character.max_health) * 100 %>
-        <div class="progress-bar bg-danger" role="progressbar" style="width: <%= current_health_percentage %>%"  aria-valuenow= <%= character.current_health %> aria-valuemin="0" aria-valuemax=<%= character.max_health %>><span id="currentHealthBar"><%= character.current_health %></span></div>
-      </div>
-    </p>
+      <p>
+        <strong>Current Health:</strong>
+        <span id="currentHealthDisplay"><%= character.current_health %></span>
+        <%= link_to "<i class='fas fa-plus'></i>".html_safe, increase_health_character_path(character), method: :post, remote: true, class: "btn btn-success", id: "increaseHealthBtn" %>
+        <%= link_to "<i class='fas fa-minus'></i>".html_safe, decrease_health_character_path(character), method: :post, remote: true, class: "btn btn-danger", id: "decreaseHealthBtn" %>
+      </p>
 
-    <p>
-      <strong>Current Health:</strong>
-      <span id="currentHealthDisplay"><%= character.current_health %></span>
-      <%= link_to "<i class='fas fa-plus'></i>".html_safe, increase_health_character_path(character), method: :post, remote: true, class: "btn btn-success", id: "increaseHealthBtn" %>
-      <%= link_to "<i class='fas fa-minus'></i>".html_safe, decrease_health_character_path(character), method: :post, remote: true, class: "btn btn-danger", id: "decreaseHealthBtn" %>
-    </p>
+      <p>
+        <strong>Character class:</strong>
+        <%= character.character_class %>
+      </p>
 
-    <p>
-      <strong>Character class:</strong>
-      <%= character.character_class %>
-    </p>
+      <p>
+        <strong>Level:
+          <%= character.level %> </strong>
 
-    <p>
-      <strong>Level:
-        <%= character.level %> </strong>
+        <%= link_to "<i id='levelUpIcon' class='fas fa-level-up-alt'></i>".html_safe, increase_level_character_path(character), method: :post, remote: true, class: "text-primary" %>
 
-      <%= link_to "<i id='levelUpIcon' class='fas fa-level-up-alt'></i>".html_safe, increase_level_character_path(character), method: :post, remote: true, class: "text-primary" %>
+      </p>
+    </div>
 
-    </p>
+    <div class="col-md-6">
+      <%= render partial: 'stat_card', locals: { character: character } %>
 
+      <p>
+        <strong>Appearance:</strong>
+        <%= character.appearance %>
+      </p>
+
+      <p>
+        <strong>Background:</strong>
+        <%= character.background %>
+      </p>
+
+      <p>
+        <strong>Armor class:</strong>
+        <%= character.armor_class %>
+      </p>
+
+      <p>
+        <strong>Race:</strong>
+        <%= character.race %>
+      </p>
+
+      <p>
+        <strong>Speed:</strong>
+        <%= character.speed %>
+      </p>
+    </div>
   </div>
 
-  <div class = "col-md-5">
-    <%= render partial: 'stat_card', locals: { character: character } %>
+  <div class="row">
+    <div class="col-md-2">
+      <!-- Armor Section -->
+      <%= render "characters/partials/armor_modal" %>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#armorModal">Armors</button>
+    </div>
 
-    <p>
-      <strong>Appearance:</strong>
-      <%= character.appearance %>
-    </p>
+    <div class="col-md-2">
+      <!-- Weapons Section -->
+      <%= render "characters/partials/weapon_modal" %>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#weaponModal">Weapons</button>
+    </div>
 
-    <p>
-      <strong>Background:</strong>
-      <%= character.background %>
-    </p>
+    <div class="col-md-2">
+      <!-- Spells Section -->
+      <%= render "characters/partials/spell_modal" %>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#spellModal">Spells</button>
+    </div>
 
-    <p>
-      <strong>Armor class:</strong>
-      <%= character.armor_class %>
-    </p>
+    <div class="col-md-2">
+      <!-- Feats Section -->
+      <%= render "characters/partials/feat_modal" %>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#featModal">Feats</button>
+    </div>
 
-    <p>
-      <strong>Race:</strong>
-      <%= character.race %>
-    </p>
-
-    <p>
-      <strong>Speed:</strong>
-      <%= character.speed %>
-    </p>
-
-    <!--<p>
-      <strong>Proficiency:</strong>
-      <%#= character.proficiency %>-->
-<!--    </p>-->
-
+    <div class="col-md-2">
+      <!-- Features Section -->
+      <%= render "characters/partials/feature_modal" %>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#featureModal">Features</button>
+    </div>
   </div>
 
+  <div class="row">
+    <div class="col-md-4">
+      <%=render  "characters/stat_partials/strength" %>
+      <%=render  "characters/stat_partials/dexterity" %>
+      <%=render  "characters/stat_partials/intelligence" %>
+      <%=render  "characters/stat_partials/constitution" %>
+      <%=render  "characters/stat_partials/wisdom" %>
+      <%=render  "characters/stat_partials/charisma" %>
+    </div>
+  </div>
 </div>
-
-<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#armorModal">
-  View Armor
-</button>-->
-
-<%=render  "characters/partials/armor_modal" %>
-<%=render  "characters/partials/weapon_modal" %>
-<%=render  "characters/partials/spell_modal" %>
-<%=render  "characters/partials/feat_modal" %>
-<%=render  "characters/partials/feature_modal" %>
-<%=render  "characters/stat_partials/strength" %>
-<%=render  "characters/stat_partials/dexterity" %>
-<%=render  "characters/stat_partials/intelligence" %>
-<%=render  "characters/stat_partials/constitution" %>
-<%=render  "characters/stat_partials/wisdom" %>
-<%=render  "characters/stat_partials/charisma" %>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#armorModal">
-  Armors
-</button>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#weaponModal">
-  Weapons
-</button>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#spellModal">
-  Spells
-</button>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#featModal">
-  Feats
-</button>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#featureModal">
-  Features
-</button>

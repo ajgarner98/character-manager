@@ -43,6 +43,7 @@ class CharactersController < ApplicationController
   def edit
   end
 
+
   # POST /characters or /characters.json
   def create
     @character = Character.new(character_params)

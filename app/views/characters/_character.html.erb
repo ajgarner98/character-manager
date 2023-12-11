@@ -68,10 +68,10 @@
       <%= character.speed %>
     </p>
 
-    <p>
+    <!--<p>
       <strong>Proficiency:</strong>
-      <%= character.proficiency %>
-    </p>
+      <%#= character.proficiency %>-->
+<!--    </p>-->
 
   </div>
 
@@ -86,7 +86,12 @@
 <%=render  "characters/partials/spell_modal" %>
 <%=render  "characters/partials/feat_modal" %>
 <%=render  "characters/partials/feature_modal" %>
-<%=render  "characters/partials/skill_modal" %>
+<%=render  "characters/stat_partials/strength" %>
+<%=render  "characters/stat_partials/dexterity" %>
+<%=render  "characters/stat_partials/intelligence" %>
+<%=render  "characters/stat_partials/constitution" %>
+<%=render  "characters/stat_partials/wisdom" %>
+<%=render  "characters/stat_partials/charisma" %>
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#armorModal">
   Armors
 </button>

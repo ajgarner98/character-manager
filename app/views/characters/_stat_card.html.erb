@@ -1,22 +1,32 @@
 <div class="container">
   <div class="row">
     <div class="col-md-5">
-      <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#skillModal">
+      <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#strengthModal">
         Strength
       </button>
-      <%= link_to "Strength", character_armors_path(@character), class: "btn btn-secondary" %>
 
-      <%= link_to "Dexterity", character_armors_path(@character), class: "btn btn-secondary" %>
+      <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#dexterityModal">
+        Dexterity
+      </button>
 
-      <%= link_to "Constitution", character_armors_path(@character), class: "btn btn-secondary" %>
+      <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#constitutionModal">
+        Constitution
+      </button>
     </div>
     <div class="col">
 
-      <%= link_to "Intelligence", character_armors_path(@character), class: "btn btn-secondary" %>
+      <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#intelligenceModal">
+        Intelligence
+      </button>
 
-      <%= link_to "Wisdom", character_armors_path(@character), class: "btn btn-secondary" %>
+      <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#wisdomModal">
+        Wisdom
+      </button>
 
-      <%= link_to "Charisma", character_armors_path(@character), class: "btn btn-secondary" %>
+      <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#charismaModal">
+        Charisma
+      </button>
+
     </div>
   </div>
 </div>

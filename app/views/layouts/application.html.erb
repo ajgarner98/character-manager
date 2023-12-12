@@ -22,7 +22,7 @@
         color: white;
         Font-family: "Montserrat";
         font-smooth: always;
-        font-size: 17px;
+        font-size: 22px;
       }
       .health-bar{
         color: red;
@@ -41,7 +41,7 @@
 
       .btn-secondary {
         margin-bottom: 20px;
-        background-color: red;
+        background-color: #AA0000;
         color: white;
         width: 200px;
         height: 70px;
@@ -52,7 +52,7 @@
       }
 
       .btn-primary {
-        background-color: red;
+        background-color: #AA0000;
         color: white;
         width: 200px;
         height: 70px;
@@ -68,7 +68,7 @@
       }
 
       .modal-header {
-        background-color: red;
+        background-color: #AA0000;
       }
 
       .modal-body {
@@ -88,9 +88,19 @@
         align-items: center;
         justify-content: center;
       }
+      #sign-style{
+        font-size: 14px;
+
+      }
+      #index-title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+      }
 
       #details {
-        background-color: red;
+        background-color: #AA0000;
         color: white;
 
 
@@ -128,16 +138,16 @@
   <body>
     <div class="navbar text-center">
       <h1 class="text-white mx-auto">Fantasy Forger</h1>
-      <span>
+      <span >
         <% if user_signed_in? %>
           <div class="btn-group">
-            <%= button_to "Edit", edit_user_registration_path, method: :get, class: "btn btn-tertiary" %>
-            <%= button_to "Sign Out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "btn btn-tertiary" %>
+            <%= button_to "Edit", edit_user_registration_path, method: :get, class: "btn btn-tertiary" , style: "font-size: 18px;"  %>
+            <%= button_to "Sign Out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "btn btn-tertiary", style: "font-size: 18px;"  %>
           </div>
         <% else %>
           <div class="btn-group">
-            <%= link_to "Sign In", new_user_session_path, class: "btn btn-tertiary" %>
-            <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-tertiary" %>
+            <%= link_to "Sign In", new_user_session_path, class: "btn btn-tertiary", style: "font-size: 18px;"  %>
+            <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-tertiary", style: "font-size: 18px;"  %>
           </div>
         <% end %>
       </span>

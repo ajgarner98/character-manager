@@ -48,6 +48,10 @@ gem "bootsnap", require: false
 
 gem "pundit"
 
+gem "cloudinary"
+
+gem "dotenv-rails", groups: [:development, :test]
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

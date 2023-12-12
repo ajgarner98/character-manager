@@ -6,7 +6,7 @@
     <!-- Connect Bootstrap JavaScript and its dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 
-    <title>Rails Template</title>
+    <title>Fantasy Forger</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -34,7 +34,7 @@
       }
 
       .navbar {
-        background-color: red;
+        background-color: #AA0000;
         color: white;
         
       }
@@ -64,6 +64,7 @@
 
       .navbar-toggler-icon span {
         background-color: white;
+        
       }
 
       .modal-header {
@@ -76,6 +77,16 @@
 
       .modal-footer {
         background-color: black;
+      }
+
+      #land-body{
+        margin-top: 100px;
+        margin-left: 500px;
+        margin-right: 500px;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       #details {
@@ -116,7 +127,7 @@
 
   <body>
     <div class="navbar text-center">
-      <h3 class="text-white mx-auto">Fantasy Forger</h3>
+      <h1 class="text-white mx-auto">Fantasy Forger</h1>
       <span>
         <% if user_signed_in? %>
           <div class="btn-group">

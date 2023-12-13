@@ -13,11 +13,7 @@ class ArmorsController < ApplicationController
 
   # GET /armors/new
   def new
-    # character_id = params[:character_id]
-
-    # # You may want to add additional logic to handle scenarios where character_id is not present
-    # @character = Character.find(character_id)
-
+    
     @armor = @character.armors.new
   end
 
@@ -49,8 +45,8 @@ class ArmorsController < ApplicationController
   def update
     respond_to do |format|
       if @armor.update(armor_params)
-        format.html { redirect_to armor_url(@armor), notice: "Armor was successfully updated." }
-        format.json { render :show, status: :ok, location: @armor }
+        format.html { redirect_to character_armor_url(@character, @armor), notice: "Armor was successfully updated." }
+        format.json { render :show, status: :ok, location: character_armor_url(@character, @armor) }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @armor.errors, status: :unprocessable_entity }

@@ -30,6 +30,10 @@ gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
 
+#Gem for Font Awesome
+gem "font-awesome-sass", "~> 6.5.1"
+
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
@@ -41,6 +45,12 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
+
+gem "pundit"
+
+gem "cloudinary"
+
+gem "dotenv-rails", groups: [:development, :test]
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -107,3 +117,9 @@ group :test do
   gem "rspec-html-matchers"
   gem "webmock"
 end
+
+gem "dockerfile-rails", ">= 1.5", :group => :development
+
+gem "sentry-ruby", "~> 5.13"
+
+gem "sentry-rails", "~> 5.13"

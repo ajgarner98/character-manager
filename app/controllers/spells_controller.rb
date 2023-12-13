@@ -1,9 +1,10 @@
 class SpellsController < ApplicationController
   before_action :set_spell, only: %i[ show edit update destroy ]
+  before_action :set_character
 
   # GET /spells or /spells.json
   def index
-    @spells = Spell.all
+    @spells = @character.spells
   end
 
   # GET /spells/1 or /spells/1.json
@@ -61,6 +62,10 @@ class SpellsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_spell
       @spell = Spell.find(params[:id])
+    end
+
+    def set_character
+      @character =  Character.find(params[:character_id])
     end
 
     # Only allow a list of trusted parameters through.

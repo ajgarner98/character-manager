@@ -1,17 +1,23 @@
 <div id="<%= dom_id feature %>">
-  <p>
-    <strong>Name:</strong>
-    <%= feature.name %>
-  </p>
+  <div class="card"  style="width: 18rem;">
+    <ul class="list-group list-group-flush" >
+      <li class="list-group-item" id = "details">
+        <p>
+          <strong>Name:</strong>
+          <%= feature.name %>
+        </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= feature.description %>
-  </p>
+        <p>
+          <strong>Description:</strong>
+          <%= feature.description %>
+        </p>
 
-  <p>
-    <strong>Character:</strong>
-    <%= feature.character_id %>
-  </p>
+        <!--<p>
+          <strong>Character:</strong>
+          <%#= feature.character_id %>-->
+<!--        </p>-->
+      </li>
+    </ul>
+  </div>
 
 </div>

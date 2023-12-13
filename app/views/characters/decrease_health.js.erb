@@ -1,0 +1,15 @@
+var currentHealthDisplay = $("#currentHealthDisplay");
+var newCurrentHealth = <%= @character.current_health %>;
+
+
+currentHealthDisplay.text(newCurrentHealth);
+
+
+var currentHealthPercentage = (newCurrentHealth / <%= @character.max_health.to_f %>) * 100;
+$(".progress-bar").css("width", currentHealthPercentage + "%");
+
+var currentHealthBar = $("#currentHealthBar");
+var newCurrentHealthBar = <%= @character.current_health %>;
+
+
+currentHealthBar.text(newCurrentHealthBar);

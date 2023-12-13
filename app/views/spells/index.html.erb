@@ -6,9 +6,11 @@
   <% @spells.each do |spell| %>
     <%= render spell %>
     <p>
-      <%= link_to "Show this spell", spell %>
+      <%= link_to "Show this spell", character_spell_path(@character, spell) %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New spell", new_spell_path %>
+<%= link_to "New spell", new_character_spell_path(@character) %>
+
+

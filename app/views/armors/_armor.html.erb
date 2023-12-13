@@ -1,27 +1,37 @@
+  
 <div id="<%= dom_id armor %>">
-  <p>
-    <strong>Armor class:</strong>
-    <%= armor.armor_class %>
-  </p>
+  <div class="card"  style="width: 18rem;">
+    <ul class="list-group list-group-flush" >
+      <li class="list-group-item" id = "details">
+        <p>
+          <strong>Armor class:</strong>
+          <%= armor.armor_class %>
+        </p>
 
-  <p>
-    <strong>Armor category:</strong>
-    <%= armor.armor_category %>
-  </p>
+        <p>
+          <strong>Armor category:</strong>
+          <%= armor.armor_category %>
+        </p>
 
-  <p>
-    <strong>Armor type:</strong>
-    <%= armor.armor_type %>
-  </p>
+        <p>
+          <strong>Armor type:</strong>
+          <%= armor.armor_type %>
+        </p>
 
-  <p>
-    <strong>Name:</strong>
-    <%= armor.name %>
-  </p>
+        <p>
+          <strong>Name:</strong>
+          <%= armor.name %>
+        </p>
 
-  <p>
-    <strong>Character:</strong>
-    <%= armor.character_id %>
-  </p>
+       <!-- <p>
+          <strong>Character:</strong>
+          <%#= armor.character_id %>-->
+<!--        </p>-->
+
+        <%= link_to "Edit armor", edit_character_armor_path(@character, armor) %>
+
+      </li>
+    </ul>
+  </div>
 
 </div>

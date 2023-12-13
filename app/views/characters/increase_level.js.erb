@@ -1,0 +1,5 @@
+var levelContainer = $("#<%= dom_id @character %> strong:contains('Level:')");
+
+var newLevel = <%= @character.level %>;
+
+levelContainer.html("Level: " + newLevel);

@@ -1,17 +1,23 @@
 <div id="<%= dom_id feat %>">
-  <p>
-    <strong>Name:</strong>
-    <%= feat.name %>
-  </p>
+  <div class="card"  style="width: 18rem;">
+    <ul class="list-group list-group-flush" >
+      <li class="list-group-item" id = "details">
+        <p>
+          <strong>Name:</strong>
+          <%= feat.name %>
+        </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= feat.description %>
-  </p>
+        <p>
+          <strong>Description:</strong>
+          <%= feat.description %>
+        </p>
 
-  <p>
-    <strong>Character:</strong>
-    <%= feat.character_id %>
-  </p>
+        <!--<p>
+          <strong>Character:</strong>
+          <%#= feat.character_id %>-->
+<!--        </p>-->
+      </li>
+    </ul>
+  </div>
 
 </div>

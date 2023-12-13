@@ -1,22 +1,28 @@
 <div id="<%= dom_id weapon %>">
-  <p>
-    <strong>Damage:</strong>
-    <%= weapon.damage %>
-  </p>
+  <div class="card"  style="width: 18rem;">
+    <ul class="list-group list-group-flush" >
+      <li class="list-group-item" id = "details">
+        <p>
+          <strong>Damage:</strong>
+          <%= weapon.damage %>
+        </p>
 
-  <p>
-    <strong>Weapon type:</strong>
-    <%= weapon.weapon_type %>
-  </p>
+        <p>
+          <strong>Weapon type:</strong>
+          <%= weapon.weapon_type %>
+        </p>
 
-  <p>
-    <strong>Name:</strong>
-    <%= weapon.name %>
-  </p>
+        <p>
+          <strong>Name:</strong>
+          <%= weapon.name %>
+        </p>
 
-  <p>
-    <strong>Character:</strong>
-    <%= weapon.character_id %>
-  </p>
+        <!--<p>
+          <strong>Character:</strong>
+          <%#= weapon.character_id %>-->
+<!--        </p>-->
+      </li>
+    </ul>
+  </div>
 
 </div>

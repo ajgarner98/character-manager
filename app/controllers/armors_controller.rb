@@ -1,9 +1,10 @@
 class ArmorsController < ApplicationController
   before_action :set_armor, only: %i[ show edit update destroy ]
+  before_action :set_character
 
   # GET /armors or /armors.json
   def index
-    @armors = Armor.all
+    @armors = @character.armors
   end
 
   # GET /armors/1 or /armors/1.json
@@ -12,27 +13,37 @@ class ArmorsController < ApplicationController
 
   # GET /armors/new
   def new
-    @armor = Armor.new
+    # character_id = params[:character_id]
+
+    # # You may want to add additional logic to handle scenarios where character_id is not present
+    # @character = Character.find(character_id)
+
+    @armor = @character.armors.new
   end
 
   # GET /armors/1/edit
   def edit
+    @armor
   end
 
   # POST /armors or /armors.json
   def create
-    @armor = Armor.new(armor_params)
+
+    @armor = @character.armors.new(armor_params)
+    # @armor = Armor.new(armor_params)
 
     respond_to do |format|
       if @armor.save
         format.html { redirect_to armor_url(@armor), notice: "Armor was successfully created." }
         format.json { render :show, status: :created, location: @armor }
       else
+        puts @armor.errors.full_messages
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @armor.errors, status: :unprocessable_entity }
       end
     end
   end
+  
 
   # PATCH/PUT /armors/1 or /armors/1.json
   def update
@@ -58,13 +69,19 @@ class ArmorsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_armor
-      @armor = Armor.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def armor_params
-      params.require(:armor).permit(:armor_class, :armor_category, :armor_type, :name, :character_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_armor
+    @armor = Armor.find(params[:id])
+  end
+
+  def set_character
+
+    @character = Character.find(params[:character_id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def armor_params
+    params.require(:armor).permit(:armor_class, :armor_category, :armor_type, :name, :character_id)
+  end
 end

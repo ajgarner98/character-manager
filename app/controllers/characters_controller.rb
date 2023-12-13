@@ -8,6 +8,30 @@ class CharactersController < ApplicationController
 
   # GET /characters/1 or /characters/1.json
   def show
+    authorize @character
+    @character = Character.find(params[:id])
+    @character_armors = @character.armors
+    @armors = @character.armors.first
+
+    @character = Character.find(params[:id])
+    @character_weapons = @character.weapons
+    @weapons = @character.weapons.first
+
+    @character = Character.find(params[:id])
+    @character_spells = @character.spells
+    @spells = @character.spells.first
+
+    @character = Character.find(params[:id])
+    @character_feats = @character.feats
+    @feats = @character.feats.first
+
+    @character = Character.find(params[:id])
+    @character_features = @character.features
+    @features = @character.features.first
+
+    @character = Character.find(params[:id])
+    @character_skills = @character.skills
+    @features = @character.features.first
   end
 
   # GET /characters/new
@@ -18,6 +42,7 @@ class CharactersController < ApplicationController
   # GET /characters/1/edit
   def edit
   end
+
 
   # POST /characters or /characters.json
   def create
@@ -57,14 +82,44 @@ class CharactersController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_character
-      @character = Character.find(params[:id])
-    end
+  def increase_level
+    @character = Character.find(params[:id])
+    @character.increment!(:level)
 
-    # Only allow a list of trusted parameters through.
-    def character_params
-      params.require(:character).permit(:strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma, :level, :character_class, :appearance, :background, :user_id, :name, :armor_class, :max_health, :current_health, :race, :speed, :proficiency, :image)
+    respond_to do |format|
+      format.js
     end
+  end
+
+  def increase_health
+    def increase_health
+      @character = Character.find(params[:id])
+      @character.increment!(:current_health)
+
+      respond_to do |format|
+        format.js
+      end
+    end
+  end
+
+  def decrease_health
+    @character = Character.find(params[:id])
+    @character.decrement!(:current_health)
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  private
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_character
+    @character = Character.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def character_params
+    params.require(:character).permit(:strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma, :level, :character_class, :appearance, :background, :user_id, :name, :armor_class, :max_health, :current_health, :race, :speed, :proficiency, :image)
+  end
 end

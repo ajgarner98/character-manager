@@ -1,14 +1,23 @@
-<p style="color: green"><%= notice %></p>
+<%if  user_signed_in?%>
+  <p style="color: green"><%= notice %></p>
 
-<h1>Characters</h1>
+  <div class="container mt-4">
+    <p class="notice text-success"><%= notice %></p>
 
-<div id="characters">
-  <% @characters.each do |character| %>
-    <%= render character %>
-    <p>
-      <%= link_to "Show this character", character %>
-    </p>
-  <% end %>
-</div>
+    <h1 class="text-center mb-4" id = "index-title">Characters</h1>
 
-<%= link_to "New character", new_character_path %>
+    <div class="row">
+      <% @characters.each do |character| %>
+        <div class= "col-md-3 mb-2">
+          <%= render partial: 'character_card', locals: { character: character } %>
+        </div>
+      <% end %>
+    </div>
+
+    <%= link_to "New character", new_character_path, class: 'btn btn-success' %>
+  </div>
+
+<%else%>
+  <%= render "landingpage"%>
+
+<%end%>

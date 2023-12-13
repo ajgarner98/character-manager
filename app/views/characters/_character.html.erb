@@ -6,7 +6,7 @@
       </p>
       <p>
         <%= link_to(edit_character_path) do %>
-          <%= image_tag character.image, class: 'img-fluid', alt: 'Character Image', width: '400', height: '300' %>
+<img src="<%= character.image %>" class="card-img-top" alt="<%= character.image.present? ? 'Log Image' : 'No Photo Uploaded' %>">
         <% end %>
       </p>
 

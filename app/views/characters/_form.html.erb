@@ -101,9 +101,14 @@
     <%= form.text_field :proficiency %>
   </div>
 
-  <div>
-    <%= form.label :image, style: "display: block", value:"https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" %>
-    <%= form.text_field :image %>
+  <!--<div>-->
+  <%#= form.label :image, style: "display: block", value:"https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" %>
+  <%#= form.text_field :image %>
+  <!--  </div>-->
+
+  <div class="mb-3">
+    <%= form.label :image, class: 'form-label' %>
+    <%= form.file_field :image, class: 'form-control' %>
   </div>
 
   <div>

@@ -50,6 +50,8 @@ gem "pundit"
 
 gem "cloudinary"
 
+gem "carrierwave"
+
 gem "dotenv-rails", groups: [:development, :test]
 
 # Use Sass to process CSS

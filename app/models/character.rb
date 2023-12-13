@@ -26,6 +26,7 @@
 #  user_id         :integer
 #
 class Character < ApplicationRecord
+  mount_uploader :image, ImageUploader
   has_many(:armors, class_name: "Armor", foreign_key: "character_id")
   has_many(:feats, class_name: "Feat", foreign_key: "character_id")
   has_many(:features, class_name: "Feature", foreign_key: "character_id")

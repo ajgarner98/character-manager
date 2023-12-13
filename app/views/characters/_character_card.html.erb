@@ -3,8 +3,9 @@
   <div class = "card mb-4", style = "width: 18rem;">
     <div class = "card-body">
       <%= link_to character_path(character) do %>
-        <%= image_tag character.image, class: 'card-img-top', alt: 'Character Image', style: 'width: 100%; height: auto;' %>
+<img src="<%= character.image %>" class="card-img-top" alt="<%= character.image.present? ? 'Log Image' : 'No Photo Uploaded' %>">
       <% end %>
+<!--      -->
       <h5 class = "card-title"> <%=character.name%> </h5>
       <p class = "card-text">
         <strong>Class:</strong> <%= character.character_class%> 

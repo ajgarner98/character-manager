@@ -39,8 +39,8 @@ class WeaponsController < ApplicationController
   def update
     respond_to do |format|
       if @weapon.update(weapon_params)
-        format.html { redirect_to weapon_url(@weapon), notice: "Weapon was successfully updated." }
-        format.json { render :show, status: :ok, location: @weapon }
+        format.html { redirect_to (@character), notice: "Weapon was successfully updated." }
+        format.json { render :show, status: :ok, location: character_weapon_url(@character, @weapon) }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @weapon.errors, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class WeaponsController < ApplicationController
     @weapon.destroy
 
     respond_to do |format|
-      format.html { redirect_to weapons_url, notice: "Weapon was successfully destroyed." }
+      format.html { redirect_to (@character), notice: 'Weapon was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

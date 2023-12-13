@@ -22,13 +22,9 @@
           <strong>Name:</strong>
           <%= armor.name %>
         </p>
-
-       <!-- <p>
-          <strong>Character:</strong>
-          <%#= armor.character_id %>-->
-<!--        </p>-->
-
+        
         <%= link_to "Edit armor", edit_character_armor_path(@character, armor) %>
+        <%= button_to 'Delete armor', character_armor_path(@character, armor), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
 
       </li>
     </ul>

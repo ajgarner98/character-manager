@@ -11,11 +11,8 @@
           <strong>Level:</strong>
           <%= spell.level %>
         </p>
-
-        <!--<p>
-          <strong>Character:</strong>
-          <%#= spell.character_id %>-->
-<!--        </p>-->
+        <%= link_to "Edit spell", edit_character_spell_path(@character, spell) %>
+        <%= button_to 'Delete spell', character_spell_path(@character, spell), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
       </li>
     </ul>
   </div>

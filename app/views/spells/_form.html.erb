@@ -1,4 +1,4 @@
-<%= form_with(model: spell) do |form| %>
+<%= form_with(model: [@character, @spell], local: true) do |form| %>
   <% if spell.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(spell.errors.count, "error") %> prohibited this spell from being saved:</h2>

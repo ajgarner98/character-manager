@@ -16,111 +16,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" %>
 
-    <style>
-      body {
-        background-color: black;
-        color: white;
-        Font-family: "Montserrat";
-        font-smooth: always;
-        font-size: 22px;
-      }
-      .health-bar{
-        color: red;
-      }
-      .collapse-content {
-        background-color: red;
-        color: white;
-        
-      }
-
-      .navbar {
-        background-color: #AA0000;
-        color: white;
-        
-      }
-
-      .btn-secondary {
-        margin-bottom: 20px;
-        background-color: #AA0000;
-        color: white;
-        width: 200px;
-        height: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-      }
-
-      .btn-primary {
-        background-color: #AA0000;
-        color: white;
-        width: 200px;
-        height: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-      }
-
-      .navbar-toggler-icon span {
-        background-color: white;
-        
-      }
-
-      .modal-header {
-        background-color: #AA0000;
-      }
-
-      .modal-body {
-        background-color: black;
-      }
-
-      .modal-footer {
-        background-color: black;
-      }
-
-      #land-body{
-        margin-top: 100px;
-        margin-left: 500px;
-        margin-right: 500px;
-        font-size: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      #sign-style{
-        font-size: 14px;
-
-      }
-      #index-title{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-      }
-
-      #details {
-        background-color: #AA0000;
-        color: white;
-
-
-      }
-      @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% {
-          transform: translateY(0);
-        }
-        40% {
-          transform: translateY(-30px);
-        }
-        60% {
-          transform: translateY(-15px);
-        }
-      }
-
-      .bounce {
-        animation: bounce 0.5s;
-      }
-    </style>
+    <%= stylesheet_link_tag 'custom_styles', media: 'all' %>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         var levelUpIcon = document.getElementById('levelUpIcon');
@@ -129,29 +25,15 @@
           levelUpIcon.classList.add('bounce');
           setTimeout(function () {
             levelUpIcon.classList.remove('bounce');
-          }, 1000); // Adjust the duration of the bounce animation
+          }, 1000); 
         });
       });
     </script>
   </head>
 
   <body>
-    <div class="navbar text-center">
-      <h1 class="text-white mx-auto">Fantasy Forger</h1>
-      <span >
-        <% if user_signed_in? %>
-          <div class="btn-group">
-            <%= button_to "Edit", edit_user_registration_path, method: :get, class: "btn btn-tertiary" , style: "font-size: 18px;"  %>
-            <%= button_to "Sign Out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "btn btn-tertiary", style: "font-size: 18px;"  %>
-          </div>
-        <% else %>
-          <div class="btn-group">
-            <%= link_to "Sign In", new_user_session_path, class: "btn btn-tertiary", style: "font-size: 18px;"  %>
-            <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-tertiary", style: "font-size: 18px;"  %>
-          </div>
-        <% end %>
-      </span>
-    </div>
+        <%= render 'shared/navbar' %>
+
 
 
   <%= yield %>

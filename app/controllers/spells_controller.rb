@@ -39,8 +39,8 @@ class SpellsController < ApplicationController
   def update
     respond_to do |format|
       if @spell.update(spell_params)
-        format.html { redirect_to spell_url(@spell), notice: "Spell was successfully updated." }
-        format.json { render :show, status: :ok, location: @spell }
+        format.html { redirect_to (@character), notice: "Spell was successfully updated." }
+        format.json { render :show, status: :ok, location: character_spell_url(@character, @spell) }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @spell.errors, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class SpellsController < ApplicationController
     @spell.destroy
 
     respond_to do |format|
-      format.html { redirect_to spells_url, notice: "Spell was successfully destroyed." }
+      format.html { redirect_to (@character), notice: 'Spell was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

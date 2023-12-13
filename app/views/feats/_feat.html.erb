@@ -12,10 +12,9 @@
           <%= feat.description %>
         </p>
 
-        <!--<p>
-          <strong>Character:</strong>
-          <%#= feat.character_id %>-->
-<!--        </p>-->
+        <%= link_to "Edit feat", edit_character_feat_path(@character, feat) %>
+        <%= button_to 'Delete feat', character_feat_path(@character, feat), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+
       </li>
     </ul>
   </div>

@@ -17,10 +17,7 @@
           <%= weapon.name %>
         </p>
 
-        <!--<p>
-          <strong>Character:</strong>
-          <%#= weapon.character_id %>-->
-<!--        </p>-->
+        <%= link_to "Edit weapon", edit_character_weapon_path(@character, weapon) %>
       </li>
     </ul>
   </div>

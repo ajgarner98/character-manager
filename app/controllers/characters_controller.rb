@@ -36,7 +36,8 @@ class CharactersController < ApplicationController
 
   # GET /characters/new
   def new
-    @character = Character.new
+    @character = Character.new(user_id: current_user.id)
+    
   end
 
   # GET /characters/1/edit

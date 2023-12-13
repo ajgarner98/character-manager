@@ -1,4 +1,4 @@
-<%= form_with(model: weapon) do |form| %>
+<%= form_with(model: [@character, @weapon], local: true) do |form| %>
   <% if weapon.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(weapon.errors.count, "error") %> prohibited this weapon from being saved:</h2>

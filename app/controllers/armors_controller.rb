@@ -45,7 +45,7 @@ class ArmorsController < ApplicationController
   def update
     respond_to do |format|
       if @armor.update(armor_params)
-        format.html { redirect_to character_armor_url(@character, @armor), notice: "Armor was successfully updated." }
+        format.html { redirect_to (@character), notice: "Armor was successfully updated." }
         format.json { render :show, status: :ok, location: character_armor_url(@character, @armor) }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -59,7 +59,7 @@ class ArmorsController < ApplicationController
     @armor.destroy
 
     respond_to do |format|
-      format.html { redirect_to armors_url, notice: "Armor was successfully destroyed." }
+      format.html { redirect_to (@character), notice: 'Armor was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -13,6 +13,7 @@
         </p>
 
       <%= link_to "Edit feature", edit_character_feature_path(@character, feature) %>
+      <%= button_to 'Delete spell', character_feature_path(@character, feature), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
       </li>
     </ul>
   </div>

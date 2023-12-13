@@ -39,7 +39,7 @@ class FeatsController < ApplicationController
   def update
     respond_to do |format|
       if @feat.update(feat_params)
-        format.html { redirect_to character_feat_url(@character, @feat), notice: "Feat was successfully updated." }
+        format.html { redirect_to (@character), notice: "Feat was successfully updated." }
         format.json { render :show, status: :ok, location: character_feat_url(@character, @feat) }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class FeatsController < ApplicationController
     @feat.destroy
 
     respond_to do |format|
-      format.html { redirect_to feats_url, notice: "Feat was successfully destroyed." }
+      format.html { redirect_to (@character), notice: 'Feat was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

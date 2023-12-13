@@ -18,6 +18,7 @@
         </p>
 
         <%= link_to "Edit weapon", edit_character_weapon_path(@character, weapon) %>
+        <%= button_to 'Delete armor', character_weapon_path(@character, weapon), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
       </li>
     </ul>
   </div>

@@ -1,0 +1,16 @@
+<div class="navbar text-center">
+  <h1 class="text-white mx-auto">Fantasy Forger</h1>
+  <span >
+    <% if user_signed_in? %>
+      <div class="btn-group">
+        <%= button_to "Edit", edit_user_registration_path, method: :get, class: "btn btn-tertiary" , style: "font-size: 18px;"  %>
+        <%= button_to "Sign Out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "btn btn-tertiary", style: "font-size: 18px;"  %>
+      </div>
+    <% else %>
+      <div class="btn-group">
+        <%= link_to "Sign In", new_user_session_path, class: "btn btn-tertiary", style: "font-size: 18px;"  %>
+        <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-tertiary", style: "font-size: 18px;"  %>
+      </div>
+    <% end %>
+  </span>
+</div>

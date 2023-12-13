@@ -1,23 +1,29 @@
-<style>body {
+
+body {
   background-color: black;
   color: white;
   Font-family: "Montserrat";
   font-smooth: always;
+  font-size: 22px;
 }
-
+.health-bar{
+  color: red;
+}
 .collapse-content {
   background-color: red;
   color: white;
+  
 }
 
 .navbar {
-  background-color: red;
+  background-color: #AA0000;
   color: white;
+  
 }
 
 .btn-secondary {
   margin-bottom: 20px;
-  background-color: red;
+  background-color: #AA0000;
   color: white;
   width: 200px;
   height: 70px;
@@ -28,9 +34,9 @@
 }
 
 .btn-primary {
-  background-color: red;
+  background-color: #AA0000;
   color: white;
-  width: 100px;
+  width: 200px;
   height: 70px;
   display: flex;
   align-items: center;
@@ -40,10 +46,11 @@
 
 .navbar-toggler-icon span {
   background-color: white;
+  
 }
 
 .modal-header {
-  background-color: red;
+  background-color: #AA0000;
 }
 
 .modal-body {
@@ -54,10 +61,45 @@
   background-color: black;
 }
 
+#land-body{
+  margin-top: 100px;
+  margin-left: 500px;
+  margin-right: 500px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#sign-style{
+  font-size: 14px;
+
+}
+#index-title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
 #details {
-  background-color: red;
+  background-color: #AA0000;
   color: white;
 
 
 }
-</style>
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.bounce {
+  animation: bounce 0.5s;
+}
+

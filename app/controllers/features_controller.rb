@@ -39,8 +39,8 @@ class FeaturesController < ApplicationController
   def update
     respond_to do |format|
       if @feature.update(feature_params)
-        format.html { redirect_to feature_url(@feature), notice: "Feature was successfully updated." }
-        format.json { render :show, status: :ok, location: @feature }
+        format.html { redirect_to character_feature_url(@character, @feature), notice: "Feature was successfully updated." }
+        format.json { render :show, status: :ok, location: character_feature_url(@character, @feature) }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @feature.errors, status: :unprocessable_entity }

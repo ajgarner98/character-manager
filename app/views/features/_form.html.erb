@@ -1,4 +1,4 @@
-<%= form_with(model: feature) do |form| %>
+<%= form_with(model: [@character, @feature], local: true) do |form| %>
   <% if feature.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(feature.errors.count, "error") %> prohibited this feature from being saved:</h2>

@@ -11,11 +11,8 @@
           <strong>Level:</strong>
           <%= spell.level %>
         </p>
-
-        <!--<p>
-          <strong>Character:</strong>
-          <%#= spell.character_id %>-->
-<!--        </p>-->
+        <%= link_to "Edit spell", edit_character_spell_path(@character, spell) %>
+        
       </li>
     </ul>
   </div>

@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
     redirect_back fallback_location: root_url
   end
 
+  # you can delete this
   # def configure_permitted_parameters
   #   devise_parameter_sanitizer.permit(:sign_up) {
   #       |u| u.permit(:email, :password, :password_confirmation, :token, :avatar)}

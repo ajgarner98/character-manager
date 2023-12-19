@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  # you can delete this
   # devise_for :users
  
   resources :feats
